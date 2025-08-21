@@ -1,0 +1,23 @@
+include:
+  - project: '<GROUP_PATH>/<DPA_REPO_NAME>'
+    ref: main
+    file: 'gitlab-ci/entrypoints/gitlab/cdk-infrastructure.yml'
+
+variables:
+  AWS_REGION: 'us-east-1'
+  # Dev environment
+  DEV_AWS_ACCOUNT: '111111111111'
+  DEV_ARN_ROLE: 'arn:aws:iam::111111111111:role/dpa-gitlab-access-role'
+  DEV_DEPLOY: 'true'
+  DEV_ENV: 'dev'
+  # Integration environment
+  INT_AWS_ACCOUNT: '222222222222'
+  INT_ARN_ROLE: 'arn:aws:iam::222222222222:role/dpa-gitlab-access-role'
+  INT_DEPLOY: 'false'
+  INT_ENV: 'int'
+
+# Optional: limit protected branches if desired
+# only:
+#   - main
+
+
